@@ -1,0 +1,63 @@
+@import "normalize"
+
+*,  *:before, *:after
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  font-family: 'Playfair Display', sans-Serif
+
+h1, h2, h3, h4, p
+  margin: 0
+
+.d-flex
+  display: flex
+
+.container
+  width: 1170px
+  margin: 0 auto
+
+.btn
+  border: none
+  background: transparent
+  cursor: pointer
+  &:focus
+    outline: none
+
+
+//color
+$hover: #FF7931
+$text: #000000
+$bannerText: #ffffff
+$btnBg: lighten(#000000, 70%)
+$bgHover: lighten(#000000, 30%)
+
+
+//mixin
+@mixin font($size, $weight, $family:'Playfair Display')
+  font-size: $size
+  font-weight: $weight
+  font-family: $family, sans-serif
+
+
+
+@import "stylesheet"
+@import "template/header"
+@import "template/slider"
+@import "template/main-content"
+@import "template/footer"
+
+
+@mixin container($max-width, $width-container)
+  @media (max-width: $max-width)
+    .container
+      width: $width-container
+
+@include container(1200px, 960px)
+@include container(992px, 720px)
+@include container(768px, 540px)
+@include container(576px, 450px)
+@include container(450px, 320px)
+
+@media (max-width: 992px)
+  .btn
+    cursor: auto

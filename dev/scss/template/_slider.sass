@@ -1,0 +1,258 @@
+.slider-header
+  &__wrap
+    min-height: 465px
+    margin-bottom: 100px
+  &__slide-wrapper
+    position: relative
+  &__slide-head
+    position: absolute
+    opacity: 1
+    transition: opacity 1s
+    &:nth-of-type(n+2)
+      opacity: 0
+
+.slide-head
+  width: 100%
+  overflow: hidden
+  &__container
+    flex-direction: column
+    align-items: center
+  &__time
+    display: inline-block
+    margin: 60px auto 45px
+    padding: 5px 15px
+    @include font(16px, normal, Raleway)
+    text-transform: uppercase
+    background: #FF7931
+    color: #ffffff
+  &__title-slide
+    margin-bottom: 40px
+  &__btn
+    width: 34px
+    height: 42px
+    &--border-left
+      border-right: 0.5px solid #ffffff
+    &--border-right
+      border-left: 0.5px solid #ffffff
+    &--prev
+      align-items: center
+      width: 155px
+      span
+        padding-right: 10px
+        @include font(13px, normal, Raleway)
+        color: #ffffff
+    &--next
+      align-items: center
+      width: 155px
+      span
+        padding-left: 10px
+        @include font(13px, normal, Raleway)
+        color: #ffffff
+  &__slide-btn-wrap
+    margin-bottom: 55px
+  &__text
+    max-width: 455px
+    margin-bottom: 50px
+    @include font(14px, normal, Raleway)
+    text-align: center
+    line-height: 150%
+    color: #ffffff
+
+.title-slide
+  @include font(72px, 300, Raleway)
+  letter-spacing: 2px
+  text-transform: uppercase
+  text-align: center
+  color: #ffffff
+
+.slide-btn-wrap
+  justify-content: space-around
+  width: 100%
+
+.slide-head-1
+  background: url('../img/slider-header/04.jpg') no-repeat center / cover
+.slide-head-2
+  background: url('../img/slider-header/02.jpg') no-repeat center / cover
+.slide-head-3
+  background: url('../img/slider-header/03.jpg') no-repeat center / cover
+
+
+//slide footer
+.slider-wrap
+  &__btn
+    justify-content: center
+    align-items: center
+    width: 44px
+    height: 44px
+    background: #ffffff
+    box-shadow: 0 0 10px 0 #A8A8A8
+    transform: translateY(-50%)
+
+.slider-footer
+  &__slider-wrap
+    position: relative
+    margin-bottom: 110px
+
+.slider-container
+  align-items: center
+  height: 132px
+  overflow-x: hidden
+  &__slide
+    position: relative
+    margin-right: 30px
+    &:last-of-type
+      margin-right: 0
+
+.slide
+  transition: transform 0.3s linear
+  &__img
+    width: 270px
+    max-height: 107px
+  &__text
+    position: absolute
+    top: 30px
+    left: 50%
+    width: 153px
+    @include font(16px, 600, Raleway)
+    text-transform: uppercase
+    color: #ffffff
+    opacity: 0
+    transform: translateX(-50%)
+    transition: opacity 0.3s
+  &__btn
+    position: absolute
+    bottom: 20px
+    left: 50%
+    padding: 7px 12px
+    @include font(12px, normal, Raleway)
+    text-decoration: none
+    text-transform: uppercase
+    border: 1px solid #ffffff
+    background: rgba(0, 0, 0, 0.3)
+    color: #ffffff
+    opacity: 0
+    transform: translateX(-50%)
+    transition: opacity 0.3s linear
+  &:hover
+    transform: scale(1.05)
+  &:hover > .slide__text, &:hover > .slide__btn
+    opacity: 1
+
+.btn
+  &__img
+    width: 10px
+    height: 10px
+  &--arrow-left
+    position: absolute
+    top: 50%
+    left: -22px
+  &--arrow-right
+    position: absolute
+    top: 50%
+    right: -22px
+
+
+@media (max-width: 1230px) and (min-width: 1200px)
+  .btn
+    &--arrow-left
+      left: -7px
+    &--arrow-right
+      right: -7px
+
+@media (max-width: 1200px)
+  .btn
+    &--arrow-left
+      left: -15px
+    &--arrow-right
+      right: -15px
+
+@media (max-width: 1010px) and (min-width: 992px)
+  .btn
+    &--arrow-left
+      left: -7px
+    &--arrow-right
+      right: -7px
+
+@media (max-width: 992px)
+  .slider-header
+    &__wrap
+      min-height: 455px
+      margin-bottom: 50px
+
+  .title-slide
+    font-size: 62px
+
+  .slider-footer
+    &__slider-wrap
+      margin: 0 auto 50px
+
+  .slide
+    &__text, &__btn
+      opacity: 1
+    &:hover
+      transform: scale(1)
+
+@media (max-width: 768px)
+  .slider-header
+    &__wrap
+      min-height: 440px
+
+  .title-slide
+    font-size: 48px
+
+  .slider-container
+    &__slide
+      margin-right: 20px
+
+  .slide
+    &__img
+      width: 260px
+
+@media (max-width: 586px) and (min-width: 576px)
+  .btn
+    &--arrow-left
+      left: -10px
+    &--arrow-right
+      right: -10px
+
+@media (max-width: 576px)
+  .slider-header
+    &__wrap
+      min-height: 426px
+
+  .title-slide
+    font-size: 38px
+
+  .slide-head__btn--prev, .slide-head__btn--next
+    display: none
+
+  .nav-btn-wrap
+    justify-content: space-between
+    width: 150px
+
+
+  .slider-footer
+    &__slider-wrap
+      width: 290px
+
+  .slide
+    &__img
+      width: 290px
+
+@media (max-width: 450px)
+  .slider-header
+    &__wrap
+      min-height: 455px
+
+  .title-slide
+    font-size: 26px
+
+@media (max-width: 320px)
+  .slide-head__text
+    max-width: 290px
+
+  .btn
+    &--arrow-left
+      left: -10px
+    &--arrow-right
+      right: -10px

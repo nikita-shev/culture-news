@@ -1,0 +1,504 @@
+//news content
+.main
+  &__content
+    margin-bottom: 80px
+  &__news
+    margin-bottom: 75px
+  &__pagination
+    margin: 0 20% 99px
+  &__banner
+    position: relative
+    max-height: 176px
+
+.news
+  &__title
+    margin-bottom: 15px
+  &__news-last
+    position: relative
+    margin-right: 30px
+  &__wrap
+    max-width: 270px
+  &__news-other
+    position: relative
+    margin-bottom: 30px
+    &:last-of-type
+      margin-bottom: 0
+
+.title
+  @include font(17px, bold, Raleway)
+  text-transform: uppercase
+
+.title-news
+  &__link
+    display: block
+    margin-bottom: 10px
+    @include font(20px, 900)
+    text-decoration: none
+    color: $text
+    transition: color 0.5s
+    &:hover
+      color: $hover
+    &--small
+      @include font(14px, 900, 'Playfair Display')
+    &--middle
+      font-size: 23px
+
+.subtitle-news
+  max-width: 415px
+  @include font(14px, normal, Raleway)
+  line-height: 150%
+
+.news-last
+  width: 470px
+  height: 334px
+  background: url('../img/news/01.jpg')
+  &__title-news
+    position: absolute
+    left: 23px
+    bottom: 60px
+  &__subtitle-news
+    position: absolute
+    left: 23px
+    bottom: 20px
+
+.news-other
+  max-height: 91px
+  &__img
+    max-width: 127px
+    max-height: 91px
+  &:hover .hover-img__btn
+    opacity: 1
+  &:hover .hover-img:before
+    opacity: 1
+  &:hover .title-news__link
+    color: $hover
+
+  &__news-other-wrap
+    margin-left: 9px
+  &__subtitle-news
+    @include font(10px, normal, Raleway)
+  &-wrap
+    flex-direction: column
+    justify-content: center
+
+.hover-img
+  position: relative
+  &__btn
+    position: absolute
+    top: 9px
+    right: 9px
+    opacity: 0
+    transition: opacity 0.5s
+  &:before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: rgba(21, 21, 30, 0.5)
+    opacity: 0
+    transition: opacity 0.5s
+
+
+//обзоры
+.reviews
+  &__title
+    margin-bottom: 15px
+
+.review-news
+  max-width: 370px
+  &:hover .hover-img__btn
+    opacity: 1
+  &:hover .hover-img:before
+    opacity: 1
+  &:hover .stats
+    opacity: 1
+  &:hover .title-news__link
+    color: $hover
+  &__hover-img
+    max-height: 203px
+    margin-bottom: 20px
+
+.reviews-wrap
+  flex-wrap: wrap
+  &__review-news
+    margin-right: 30px
+    margin-bottom: 40px
+    &:nth-of-type(2n)
+      margin-right: 0
+
+//hover статистика
+.hover-img
+  &__stats
+    position: absolute
+    left: 19px
+    bottom: 16px
+
+.stats
+  transition: opacity 0.5s
+  opacity: 0
+  &__views
+    position: relative
+    margin-left: 30px
+    margin-right: 25px
+    color: rgba(225, 255, 255, 0.4)
+    &:before
+      content: url('../img/icon/views.png')
+      position: absolute
+      top: 4px
+      left: -26px
+  &__comments
+    position: relative
+    margin-left: 20px
+    font-size: 18px
+    color: rgba(225, 255, 255, 0.4)
+    &:before
+      content: url('../img/icon/comments.png')
+      position: absolute
+      top: 3px
+      left: -22px
+
+
+//пагинация
+.pagination
+  justify-content: space-between
+  width: 430px
+  &__btn
+    max-height: 27px
+    cursor: pointer
+
+.pages
+  padding: 0
+  list-style: none
+  &__item
+    margin-right: 25px
+    &:last-of-type
+      margin-right: 0
+  &__link
+    @include font(14px, normal, Raleway)
+    text-decoration: none
+    color: $text
+    opacity: 0.4
+    &--active
+      position: relative
+      @include font(20px, 500, Raleway)
+      opacity: 1
+      &:before
+        content: ''
+        position: absolute
+        bottom: -2px
+        left: -2px
+        width: 13px
+        height: 3px
+        background: #FF7931
+
+//banners
+.sidebar
+  flex-direction: column
+  &__banner
+    position: relative
+    max-height: 479px
+    margin-bottom: 33px
+    &:last-of-type
+      margin-bottom: 0
+
+.banner
+  &__title-banners
+    position: absolute
+    top: 50px
+    left: 60px
+  &__btn
+    position: absolute
+    bottom: 40px
+    left: 100px
+    align-items: center
+    padding: 10px 36px
+    @include font(12px, 600, Raleway)
+    text-transform: uppercase
+    text-decoration: none
+    border: 2px solid #FF9A64
+    background: rgba(0, 0, 0, 0.7)
+    color: $bannerText
+    transition: all 0.5s ease-in-out
+    &--mod
+      top: 50%
+      left: auto
+      right: 140px
+      transform: translateY(-50%)
+    &:hover
+      background: $hover
+      border-color: $hover
+  &__btn-img
+      margin-left: 6px
+
+.title-banners
+  max-width: 250px
+  @include font(30px, 900)
+  text-align: center
+  text-transform: uppercase
+  line-height: 40px
+  &--mod
+    top: 50%
+    left: 110px
+    transform: translateY(-50%)
+    max-width: 100%
+    @include font(30px, 500, Releway)
+    color: #ffffff
+  &--new-color
+    color: #ffffff
+
+
+@media (max-width: 1200px)
+  .news-last
+    max-width: 380px
+    &__title-news, &__subtitle-news
+      left: 13px
+
+  .review-news
+    width: 325px
+    &__img
+      width: 325px
+      height: 178px
+    &__hover-img
+      max-height: 178px
+
+  .banner
+    &__img
+      max-width: 250px
+      &--small
+        max-width: 680px
+    &__title-banners
+      left: 40px
+    &__btn
+      left: 40px
+      &--mod
+        left: auto
+
+  .title-news
+    &__link
+      font-size: 18px
+      &--small
+        font-size: 14px
+
+  .subtitle-news
+    font-size: 12px
+
+  .news-other
+    &__subtitle-news
+      font-size: 10px
+
+  .title-banners
+    max-width: 170px
+    font-size: 24px
+    &--mod
+      max-width: 100%
+      left: 10%
+
+
+@media (max-width: 992px)
+  .container
+    &--mobile
+      flex-direction: column
+
+  .main
+    &__content
+      margin-bottom: 50px
+    &__news
+      margin-bottom: 50px
+    &__pagination
+      margin-bottom: 70px
+
+  .news-last
+    max-width: 420px
+
+  .title-news
+    &__link
+      &:hover
+        color: $text
+
+  //hover del
+  .news-other
+    &:hover .hover-img__btn
+      opacity: 1
+    &:hover .hover-img:before
+      opacity: 0
+    &:hover .title-news__link
+      color: $text
+
+  .hover-img__btn
+    opacity: 1
+
+  .review-news
+    &:hover .hover-img:before
+      opacity: 0
+    &:hover .stats
+      opacity: 1
+    &:hover .title-news__link
+      color: $text
+
+  .stats
+    display: none
+
+  .banner
+    &__btn
+      &:hover
+        background: rgba(0, 0, 0, 0.7)
+        border-color: #FF9A64
+
+
+  .review-news
+    width: 345px
+    &__img
+      width: 345px
+
+  .sidebar
+    flex-direction: row
+    justify-content: space-between
+    &__banner
+      max-height: 300px
+
+  .banner
+    &__img
+      max-width: 230px
+      &--small
+        max-width: 100%
+    &__title-banners
+      left: 30px
+    &__btn
+      left: 30px
+      bottom: 25px
+      &--mod
+        left: auto
+        bottom: auto
+
+  .title-banners
+    font-size: 20px
+    line-height: 32px
+    &--mod
+      left: 15%
+
+@media (max-width: 768px)
+  .inner
+    flex-direction: column
+
+  .news-last
+    max-width: 100%
+
+  .news
+    &__news-last
+      margin: 0 auto 20px
+    &__wrap
+      max-width: 350px
+      margin: 0 auto
+
+  .review-news
+    max-width: 370px
+    &__img
+      max-width: 100%
+
+  .reviews-wrap
+    &__review-news
+      margin: 0 auto 30px
+      &:nth-of-type(2n)
+        margin-right: auto
+
+  .title-banners
+    &--mod
+      left: 10%
+
+  .banner
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 290px
+    &__img
+      width: 100%
+    &__title-banners
+      left: 60px
+    &__btn
+      left: 60px
+      &--mod
+        left: auto
+        right: 10%
+
+  .sidebar
+    flex-direction: column
+    &__banner
+      margin: 0 auto 30px
+
+  .main
+    &__banner
+      width: 100%
+    &__pagination
+      margin: 0 auto 50px
+    &__sidebar
+      margin-bottom: 60px
+
+
+@media (max-width: 576px)
+  .title-news
+    &__link
+      font-size: 20px
+      &--middle
+        font-size: 23px
+      &--small
+        font-size: 14px
+
+  .subtitle-news
+    font-size: 14px
+
+  .news-other
+    &__subtitle-news
+      font-size: 10px
+
+  .review-news
+    &__hover-img
+      margin-bottom: 15px
+
+  .title-banners
+    &--mod
+      top: 40px
+      left: 50%
+      width: 100%
+      transform: translateX(-50%)
+
+  .banner
+    &__img
+      &--small
+        height: 176px
+        object-fit: cover
+    &__btn
+      &--mod
+        bottom: 40px
+        left: 50%
+        width: 170px
+        transform: translateX(-50%)
+
+@media (max-width: 450px)
+  .news-last
+    &__title-news
+      bottom: 80px
+
+  .pagination
+    justify-content: space-evenly
+    width: 100%
+
+  .pages
+    &__item
+      &:nth-of-type(n+4):nth-of-type(-n+5)
+        display: none
+
+@media (max-width: 320px)
+  .news__title, .reviews__title
+    margin-left: 15px
+
+  .news
+    &-last
+      width: 90%
+    &__news-other
+      width: 90%
+      margin: 0 auto 30px
+
+  .review-news
+    width: 90%

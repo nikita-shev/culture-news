@@ -1,0 +1,118 @@
+.header
+  &__container
+    padding: 60px 0 47px
+  &__logo
+    margin-bottom: 45px
+    text-align: center
+
+.logo
+  @include font(35px, 900)
+  &__link
+    text-decoration: none
+    color: $text
+
+.menu
+  &__list
+    justify-content: space-between
+    padding: 0
+    list-style: none
+  &__link
+    position: relative
+    @include font(15px, normal, Raleway)
+    text-transform: uppercase
+    letter-spacing: 2px
+    text-decoration: none
+    color: $text
+    &:after
+      content: ''
+      position: absolute
+      bottom: -3px
+      left: 0
+      width: 0%
+      height: 1px
+      background: $text
+      transition: width 0.7s ease-in-out
+    &:hover:after
+      width: 100%
+
+.menu-burger
+  &__btn
+    position: fixed
+    left: 0
+    top: 0
+    z-index: 999
+    display: none
+    justify-content: center
+    align-items: center
+    width: 50px
+    height: 50px
+    background: #FF7931
+
+.menu-close
+  &__btn
+    position: fixed
+    top: 16px
+    right: 16px
+    z-index: 999
+    display: none
+
+
+@media (max-width: 992px)
+  .header
+    &__logo
+      margin-bottom: 20px
+
+  .menu-burger
+    &__btn
+      display: block
+
+  .menu
+    display: none
+    &__list
+      position: fixed
+      top: 65px
+      left: 0
+      z-index: 999
+      flex-direction: column
+      width: 100%
+      background: #ffffff
+    &__link
+      z-index: 2
+      display: block
+      width: 100%
+      padding: 18px 0 18px 16px
+      &:hover:after
+        width: 0% !important
+    &__list-item
+      position: relative
+      margin-bottom: 20px
+      background: #F9F9FC
+      &:after
+        content: url('../img/icon/arrow-up.png')
+        position: absolute
+        right: 25px
+        top: 52%
+        transform: translateY(-50%)
+
+@media (max-width: 576px)
+  .header
+    &__logo
+      margin-bottom: 0
+
+  .logo
+    font-size: 25px
+    line-height: 33px
+
+@media (max-width: 450px)
+  .header
+    &__logo
+      margin: 0 auto
+  .logo
+    max-width: 145px
+
+  .menu
+    &__list-item
+      margin-bottom: 15px
+    &__link
+      padding: 13px 0 13px 16px
+      font-size: 13px !important
